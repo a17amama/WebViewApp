@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -31,16 +32,22 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        WebView webView = new WebView(this);
 
+       /*WebView webView = (WebView) findViewById(R.id.amanda);
         WebViewClient appen = new WebViewClient();
         webView.setWebViewClient(appen);
 
-        setContentView(webView);
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        */
 
       //  webView.loadUrl("http://wwwlab.iit.his.se/a17amama/Mobilapplikation/app-prototyp/qrou.html");
-        webView.loadUrl("file:///android_asset/qrou.html");
 
+
+        WebView webView = new WebView(this);
+        setContentView(webView);
+        //webView.loadUrl("file:///android_asset/qrou.html");
+        webView.loadUrl("http://wwwlab.iit.his.se/a17amama/Mobilapplikation/app-prototyp/qrou.html");
     }
 
     @Override
